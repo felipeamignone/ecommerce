@@ -18,7 +18,7 @@ const TotalPriceContainer: React.FC<TotalPriceProps> = (props) => {
         totalPrice += qnt * price;
       }
     });
-    return totalPrice;
+    return totalPrice.toFixed(2);
   };
   console.log(calculateTotalPrice(props.cart));
   return (
