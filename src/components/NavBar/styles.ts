@@ -34,13 +34,4 @@ export const HomeButton = styled.button`
   width: 50px;
 `;
 
-export const CartButton = styled.button`
-  cursor: pointer;
-  border: none;
-  outline: none;
 
-  margin: 5px 20px;
-  border-radius: 50px;
-  width: 50px;
-
-`;

@@ -1,21 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Product from "../../components/Product";
 import AddToCart from "../../components/AddToCart";
 
-import avatarImg from "../../assets/images/avatar.png";
+import { productsDataBase as products } from "../../config/database";
 
 import { Container } from "./styles";
+import { ProductType } from "./types";
 
 const Landing: React.FC = () => {
+  const [cart, setCart] = useState<Array<ProductType>>([]);
   return (
     <Container>
       <div className="products">
-        <Product name="Prodto 1" qnt={0} price={455.5} img={avatarImg} />
-        <Product name="Prodto 2" qnt={0} price={455.5} img={avatarImg} />
-        <Product name="Prodto 3" qnt={0} price={455.5} img={avatarImg} />
+        {products.map((product, index) => (
+          <Product
+            product={product}
+            key={index}
+            handleChange={setCart}
+            cart={cart}
+          />
+        ))}
       </div>
       <div className="add">
-        <AddToCart />
+        <AddToCart cart={cart}/>
       </div>
     </Container>
   );
