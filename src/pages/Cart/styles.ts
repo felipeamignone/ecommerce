@@ -1,17 +1,44 @@
 import styled from "styled-components";
+import ProductCart from "../../components/usercases/ProductCart";
 
 export const Container = styled.div`
-  height: 100vh;
-  background-color: #ededed;
-  justify-content: flex-end;
+  display: flex;
   flex-direction: column;
-  background-color: #ededed;
+  width: 100%;
+`;
 
-  .items {
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }
+export const Item = styled.div`
+  display: flex;
+  height: 80px;
+`;
+
+export const ProductCard = styled(ProductCart)``;
+
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding: 32px 0 26px;
+`;
+
+export const ApresentationText = styled.p.attrs({
+  children: 'Alfaces adicionados no carrinho',
+})`
+  font-size: 24px;
+  color: blueviolet;
+  font-weight: 700;
+  margin: 0;
+  padding: 4px
+`;
+
+export const SecundaryText = styled.p.attrs({
+  children: 'Clique em confirmar para finalizar a compra',
+})`
+  font-size: 18px;
+  color: black;
+  font-weight: 400;
+  margin: 0;
+  padding: 4px
 `;

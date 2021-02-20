@@ -9,5 +9,4 @@ export type IProduct = {
   description: string;
   img: string;
 };
-
 export type ICaracteristica = Array<string>;

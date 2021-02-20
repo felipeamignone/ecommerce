@@ -15,7 +15,7 @@ export const TextContainer = styled.div`
   justify-content: center;
   text-align: center;
   width: 100%;
-  padding: 20px;
+  padding: 32px 0 26px;
 `;
 
 export const ApresentationText = styled.p.attrs({
