@@ -1,29 +1,41 @@
-import React, { useState } from "react";
-import Product from "../../components/Product";
-import AddToCart from "../../components/AddToCart";
+import React from "react";
+import { ILanding, IProduct } from "../../data/models/landing";
+import {
+  TextContainer,
+  ApresentationText,
+  Container,
+  Product,
+  ProductsContainer,
+  SecundaryText,
+} from "./styles";
 
-import { productsDataBase as products } from "../../config/database";
+import { ListaAlfaces } from "../../data/fakedb";
 
-import { Container } from "./styles";
-import { ProductType } from "./types";
+const Landing = (): JSX.Element => {
+  const showProducts = (list: Array<IProduct>): JSX.Element => (
+    <ProductsContainer>
+      {list.map((product) => {
+        const { description, id, name, price, img } = product;
+        return (
+          <Product
+            description={description}
+            id={id}
+            name={name}
+            price={price}
+            img={img}
+          />
+        );
+      })}
+    </ProductsContainer>
+  );
 
-const Landing: React.FC = () => {
-  const [cart, setCart] = useState<Array<ProductType>>([]);
   return (
     <Container>
-      <div className="products">
-        {products.map((product, index) => (
-          <Product
-            product={product}
-            key={index}
-            handleChange={setCart}
-            cart={cart}
-          />
-        ))}
-      </div>
-      <div className="add">
-        <AddToCart cart={cart}/>
-      </div>
+      <TextContainer>
+        <ApresentationText />
+        <SecundaryText />
+      </TextContainer>
+      {showProducts(ListaAlfaces)}
     </Container>
   );
 };
