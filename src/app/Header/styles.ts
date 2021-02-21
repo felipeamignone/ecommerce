@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import menu from "../../assets/icons/menuIcon.svg"
-
 export const HeaderContainer = styled.div`
   display: flex;
   background-color: blueviolet;
@@ -20,3 +18,9 @@ export const HeaderText = styled.p.attrs({
   text-transform: uppercase;
 `;
 
+export const HomeButton = styled.a.attrs({
+  href: "/",
+})`
+  text-decoration: none;
+  color: #fff;
+`;

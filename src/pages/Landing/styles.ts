@@ -34,7 +34,7 @@ export const ApresentationText = styled.p.attrs({
 `;
 
 export const SecundaryText = styled.p.attrs({
-  children: "Clique no card de um produto para ver seus detalhes",
+  children: "Clique nos botões para adicionar ou remover um item do carrinho",
 })`
   font-size: 18px;
   color: black;
@@ -67,4 +67,7 @@ export const ConfirmButton = styled.button.attrs({})`
 `;
 export const LinkToCart = styled.a.attrs({
   href: "/cart",
-})``;
+})`
+  text-decoration: none;
+  color: black;
+`;

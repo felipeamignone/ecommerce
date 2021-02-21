@@ -1,11 +1,13 @@
 import React from "react";
 
-import { HeaderContainer, HeaderText } from "./styles";
+import { HeaderContainer, HeaderText, HomeButton } from "./styles";
 
 const Header: React.FC = () => {
   return (
     <HeaderContainer>
-      <HeaderText />
+      <HomeButton>
+        <HeaderText />
+      </HomeButton>
     </HeaderContainer>
   );
 };
