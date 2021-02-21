@@ -14,6 +14,7 @@ const Alface1: IProduct = {
   name: "Alface Americana",
   price: 5.99,
   img: americana,
+  category: 'Internacional',
 };
 
 const Alface2: IProduct = {
@@ -23,6 +24,7 @@ const Alface2: IProduct = {
   name: "Alface Lisa",
   price: 5.99,
   img: lisa,
+  category: 'Textura',
 };
 
 const Alface3: IProduct = {
@@ -32,6 +34,7 @@ const Alface3: IProduct = {
   name: "Alface Crespa",
   price: 5.99,
   img: crespa,
+  category: 'Textura',
 };
 
 const Alface4: IProduct = {
@@ -41,6 +44,7 @@ const Alface4: IProduct = {
   name: "Alface Frisée",
   price: 5.99,
   img: frisee,
+  category: 'Nem eu sei',
 };
 
 const Alface5: IProduct = {
@@ -50,6 +54,7 @@ const Alface5: IProduct = {
   name: "Alface Mimosa",
   price: 5.99,
   img: mimosa,
+  category: 'Gado',
 };
 
 const Alface6: IProduct = {
@@ -59,6 +64,7 @@ const Alface6: IProduct = {
   name: "Alface Roxa",
   price: 5.99,
   img: roxa,
+  category: 'Colorido',
 };
 
 export const ListaAlfaces: Array<IProduct> = [

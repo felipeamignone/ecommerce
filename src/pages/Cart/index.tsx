@@ -8,42 +8,56 @@ import {
   ApresentationText,
   SecundaryText,
   TextContainer,
+  ConfirmButton,
+  ConfirmButtonContainer,
 } from "./styles";
-import { ICart } from "../../data/models/cart";
+import { ICart, PurchasedProduct } from "../../data/models/cart";
 
 const Cart: React.FC = () => {
+  const getProducts = (): Array<PurchasedProduct> => {
+    const storageProducts = localStorage.getItem("products");
+    if (storageProducts !== null) {
+      return JSON.parse(storageProducts);
+    }
+    return [];
+  };
+
   const FakeCart: ICart = {
-    PurchasedProducts: [
-      { TKey: 4, TValue: ListaAlfaces[0] },
-      { TKey: 3, TValue: ListaAlfaces[1] },
-      { TKey: 2, TValue: ListaAlfaces[5] },
-    ],
+    PurchasedProducts: getProducts(),
   };
 
   const { PurchasedProducts } = FakeCart;
 
-  const ShowProducts = (): JSX.Element => {
-    return (
-      <Container>
-        <TextContainer>
-          <ApresentationText />
-          <SecundaryText />
-        </TextContainer>
-        {PurchasedProducts.map(
-          (product): JSX.Element => {
-            const { TKey, TValue } = product;
+  const ShowProducts = (): JSX.Element => (
+    <>
+      {PurchasedProducts.map(
+        (product): JSX.Element => {
+          const { TKey, TValue } = product;
+          if (TKey !== 0) {
             return (
               <Item>
                 <ProductCard TKey={TKey} TValue={TValue} />
               </Item>
             );
           }
-        )}
-      </Container>
-    );
-  };
+          return <> </>
+        }
+      )}
+    </>
+  );
 
-  return ShowProducts();
+  return (
+    <Container>
+      <TextContainer>
+        <ApresentationText />
+        <SecundaryText />
+      </TextContainer>
+      {ShowProducts()}
+      <ConfirmButtonContainer>
+        <ConfirmButton>CONFIRMAR</ConfirmButton>
+      </ConfirmButtonContainer>
+    </Container>
+  );
 };
 
 export default Cart;

@@ -7,6 +7,8 @@ export type IProduct = {
   price: number;
   id: number;
   description: string;
+  category: string;
   img: string;
 };
+
 export type ICaracteristica = Array<string>;
